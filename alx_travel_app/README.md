@@ -80,3 +80,70 @@ This project integrates the Chapa payment gateway for handling bookings.
 ### Testing
 Use Chapa's sandbox environment.
 
+
+#alx_travel_app_0x03
+
+## Background Task Management with Celery and Email Notifications
+
+### Setup
+
+1. **Install dependencies**
+   ```bash
+   pip install celery
+   sudo apt-get install rabbitmq-server
+
+2. **Run RabbitMQ**
+
+   ```bash
+   sudo systemctl start rabbitmq-server
+   ```
+
+3. **Run Django server**
+
+   ```bash
+   python manage.py runserver
+   ```
+
+4. **Run Celery worker**
+
+   ```bash
+   celery -A alx_travel_app worker -l info
+   ```
+
+### Features
+
+* Booking confirmation emails sent asynchronously
+* Celery + RabbitMQ integration
+
+````
+
+---
+
+## 6. Test the Flow
+
+1. Start RabbitMQ:
+   ```bash
+   sudo systemctl start rabbitmq-server
+````
+
+2. Run Django:
+
+   ```bash
+   python manage.py runserver
+   ```
+3. Run Celery:
+
+   ```bash
+   celery -A alx_travel_app worker -l info
+   ```
+4. Create a booking (via API or Admin).
+5. Check Celery logs → email task should execute.
+
+---
+
+✅ At this point:
+
+* Project is duplicated as `alx_travel_app_0x03`.
+* Celery + RabbitMQ are configured.
+* Background task for **booking confirmation email** is implemented.
+* Documentation is updated.

@@ -38,7 +38,7 @@ SECRET_KEY = 'django-insecure-a+3)dn+5txvx%yw0)(u##v!-sn0%um@_*srix870@l)b+lju%+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = env("SECRET_KEY", default="replace-this-with-a-unique-secret-key")
 
 ALLOWED_HOSTS = []
 
@@ -148,3 +148,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Celery Configuration
+CELERY_BROKER_URL = "amqp://localhost"   # RabbitMQ
+CELERY_RESULT_BACKEND = "rpc://"
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+
+# Email Configuration (adjust for your setup)
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025
+DEFAULT_FROM_EMAIL = "noreply@alxtravel.com"
