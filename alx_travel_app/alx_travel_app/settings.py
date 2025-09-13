@@ -21,7 +21,7 @@ env = environ.Env()
 
 # 2. Load .env files
 env.read_env(os.path.join(BASE_DIR, '.env'))
-env.read_env(os.path.join(BASE_DIR, 'payments', 'chapa_config.env'))
+#env.read_env(os.path.join(BASE_DIR, 'payments', 'chapa_config.env'))
 
 # 3. Use variables
 SECRET_KEY = env("SECRET_KEY")
@@ -30,15 +30,7 @@ DEBUG = env.bool("DEBUG", default=False)
 CHAPA_SECRET_KEY = env("CHAPA_SECRET_KEY")
 CHAPA_BASE_URL = env("CHAPA_BASE_URL", default="https://api.chapa.co/v1")
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-a+3)dn+5txvx%yw0)(u##v!-sn0%um@_*srix870@l)b+lju%+'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
-SECRET_KEY = env("SECRET_KEY", default="replace-this-with-a-unique-secret-key")
 
 ALLOWED_HOSTS = []
 
