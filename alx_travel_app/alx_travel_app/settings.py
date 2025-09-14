@@ -30,8 +30,6 @@ DEBUG = env.bool("DEBUG", default=False)
 CHAPA_SECRET_KEY = env("CHAPA_SECRET_KEY")
 CHAPA_BASE_URL = env("CHAPA_BASE_URL", default="https://api.chapa.co/v1")
 
-DEBUG = env.bool("DEBUG", default=False)
-
 ALLOWED_HOSTS = ["ugochukwu.pythonanywhere.com"]
 
 
